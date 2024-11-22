@@ -33,3 +33,17 @@
   filter: brightness(50%) !important;
   pointer-events: none;
 }
+
+.supscript {
+  vertical-align: super;
+  font-size: 75%;
+  position: relative;
+  top: -0.5em;
+}
+
+.subscript {
+  vertical-align: sub; 
+  font-size: 75%;
+  position: relative;
+  top: 0.2em;
+}
