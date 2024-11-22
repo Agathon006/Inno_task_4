@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./src/assets/icons/calc.ico" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="./src/assets/fonts/Inter/font-inter-regular.css"
+    />
     <title>Advanced calc app</title>
     <script src="./build/bundle.js" type="module" defer></script>
   </head>
@@ -28,12 +31,31 @@
           <div class="calc" id="calc">
             <span class="calc__last-value" id="lastValue"></span>
             <output class="calc__value" id="value">0</output>
-            <button class="calc__open-braket force-lock" data-btn="open-braket">(</button>
-            <button class="calc__close-braket force-lock" data-btn="close-braket">)</button>
-            <button class="calc__make-clear memory-lock" data-btn="make-clear" id="makeClearBtn">mc</button>
+            <button class="calc__open-braket force-lock" data-btn="open-braket">
+              (
+            </button>
+            <button
+              class="calc__close-braket force-lock"
+              data-btn="close-braket"
+            >
+              )
+            </button>
+            <button
+              class="calc__make-clear memory-lock"
+              data-btn="make-clear"
+              id="makeClearBtn"
+            >
+              mc
+            </button>
             <button class="calc__make-plus" data-btn="make-plus">m+</button>
             <button class="calc__make-minus" data-btn="make-minus">m-</button>
-            <button class="calc__make-recall memory-lock" data-btn="make-recall" id="makeRecallBtn">mr</button>
+            <button
+              class="calc__make-recall memory-lock"
+              data-btn="make-recall"
+              id="makeRecallBtn"
+            >
+              mr
+            </button>
             <button class="calc__reset" data-btn="reset" id="resetText">
               AC
             </button>
@@ -44,12 +66,27 @@
             <button class="calc__division" data-btn="division" id="divisionBtn">
               &divide
             </button>
-            <button class="calc__second-function force-lock" data-btn="second-function">2<span class="supscript">nd</span></button>
-            <button class="calc__square" data-btn="square">x<span class="supscript">2</span></button>
-            <button class="calc__cube" data-btn="cube">x<span class="supscript">3</span></button>
-            <button class="calc__power" data-btn="power" id="powerBtn">x<span class="supscript">y</span></button>
-            <button class="calc__exp force-lock" data-btn="exp">e<span class="supscript">x</span></button>
-            <button class="calc__ten-power" data-btn="ten-power">10<span class="supscript">x</span></button>
+            <button
+              class="calc__second-function force-lock"
+              data-btn="second-function"
+            >
+              2<span class="supscript">nd</span>
+            </button>
+            <button class="calc__square" data-btn="square">
+              x<span class="supscript">2</span>
+            </button>
+            <button class="calc__cube" data-btn="cube">
+              x<span class="supscript">3</span>
+            </button>
+            <button class="calc__power" data-btn="power" id="powerBtn">
+              x<span class="supscript">y</span>
+            </button>
+            <button class="calc__exp force-lock" data-btn="exp">
+              e<span class="supscript">x</span>
+            </button>
+            <button class="calc__ten-power" data-btn="ten-power">
+              10<span class="supscript">x</span>
+            </button>
             <button class="calc__seven" data-btn="seven">7</button>
             <button class="calc__eight" data-btn="eight">8</button>
             <button class="calc__nine" data-btn="nine">9</button>
@@ -57,11 +94,19 @@
               &times
             </button>
             <button class="calc__reciprocal" data-btn="reciprocal">1/x</button>
-            <button class="calc__sqrt" data-btn="sqrt"><span class="supscript">2</span>√x</button>
-            <button class="calc__cbrt" data-btn="cbrt"><span class="supscript">3</span>√x</button>
-            <button class="calc__root" data-btn="root" id="rootBtn"><span class="supscript">y</span>√x</button>
+            <button class="calc__sqrt" data-btn="sqrt">
+              <span class="supscript">2</span>√x
+            </button>
+            <button class="calc__cbrt" data-btn="cbrt">
+              <span class="supscript">3</span>√x
+            </button>
+            <button class="calc__root" data-btn="root" id="rootBtn">
+              <span class="supscript">y</span>√x
+            </button>
             <button class="calc__ln force-lock" data-btn="ln">ln</button>
-            <button class="calc__log10 force-lock" data-btn="log10">log<span class="subscript">10</span></button>
+            <button class="calc__log10 force-lock" data-btn="log10">
+              log<span class="subscript">10</span>
+            </button>
             <button class="calc__four" data-btn="four">4</button>
             <button class="calc__five" data-btn="five">5</button>
             <button class="calc__six" data-btn="six">6</button>
@@ -78,19 +123,27 @@
             <button class="calc__two" data-btn="two">2</button>
             <button class="calc__three" data-btn="three">3</button>
             <button class="calc__plus" data-btn="plus" id="plusBtn">+</button>
-            <button class="calc__radians-mode force-lock" data-btn="radians-mode">Rad</button>
+            <button
+              class="calc__radians-mode force-lock"
+              data-btn="radians-mode"
+            >
+              Rad
+            </button>
             <button class="calc__sinh force-lock" data-btn="sinh">sinh</button>
             <button class="calc__cosh force-lock" data-btn="cosh">cosh</button>
             <button class="calc__tanh force-lock" data-btn="tanh">tanh</button>
             <button class="calc__pi force-lock" data-btn="pi">&pi;</button>
-            <button class="calc__random force-lock" data-btn="random">Rand</button>
+            <button class="calc__random force-lock" data-btn="random">
+              Rand
+            </button>
             <button class="calc__zero" data-btn="zero">0</button>
             <button class="calc__comma" data-btn="comma">,</button>
             <button class="calc__compute" data-btn="compute">=</button>
           </div>
           <div class="note__wrapper">
             <span class="note"
-              >The calculator might not be accurate for very large numbers.</span
+              >The calculator might not be accurate for very large
+              numbers.</span
             >
           </div>
         </div>
