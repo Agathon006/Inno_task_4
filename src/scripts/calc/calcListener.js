@@ -13,11 +13,12 @@ export default () => {
     value: 0,
     lastValue: null,
     operation: null,
+    memoryValue: null,
   };
 
   const valueText = document.querySelector("#value");
-  const lastValueText = document.querySelector("#last-value");
-  const resetText = document.querySelector("#reset-text");
+  const lastValueText = document.querySelector("#lastValue");
+  const resetText = document.querySelector("#resetText");
 
   const plusBtn = document.querySelector("#plusBtn");
   const minusBtn = document.querySelector("#minusBtn");
@@ -25,6 +26,8 @@ export default () => {
   const divisionBtn = document.querySelector("#divisionBtn");
   const powerBtn = document.querySelector("#powerBtn");
   const rootBtn = document.querySelector("#rootBtn");
+  const makeClearBtn = document.querySelector('#makeClearBtn')
+  const makeRecallBtn = document.querySelector('#makeRecallBtn')
 
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active");
@@ -160,8 +163,28 @@ export default () => {
           state.value = 1 / state.value;
         }
         break;
+      case "make-clear":
+        state.memoryValue = null;
+        break;
+      case "make-plus":
+        state.memoryValue += state.value;
+        break;
+      case "make-minus":
+        state.memoryValue -= state.value;
+        break;
+      case "make-recall":
+        state.value = state.memoryValue;
+        break;
       default:
         break;
+    }
+
+    if (state.memoryValue === null) {
+      makeClearBtn.classList.add("memory-lock");
+      makeRecallBtn.classList.add("memory-lock");
+    } else {
+      makeClearBtn.classList.remove("memory-lock");
+      makeRecallBtn.classList.remove("memory-lock");
     }
 
     if (

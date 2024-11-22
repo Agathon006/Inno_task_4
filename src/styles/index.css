@@ -40,6 +40,11 @@
   pointer-events: none;
 }
 
+.memory-lock {
+  filter: brightness(50%) !important;
+  pointer-events: none;
+}
+
 .force-lock {
   filter: brightness(50%) !important;
   pointer-events: none;

@@ -27,15 +27,15 @@
       <main class="main">
         <div class="main__wrapper">
           <div class="calc" id="calc">
-            <span class="calc__last-value" id="last-value"></span>
+            <span class="calc__last-value" id="lastValue"></span>
             <output class="calc__value" id="value">0</output>
             <button class="calc__open-braket force-lock" data-btn="open-braket">(</button>
             <button class="calc__close-braket force-lock" data-btn="close-braket">)</button>
-            <button class="calc__make-clear" data-btn="make-clear">mc</button>
+            <button class="calc__make-clear memory-lock" data-btn="make-clear" id="makeClearBtn">mc</button>
             <button class="calc__make-plus" data-btn="make-plus">m+</button>
             <button class="calc__make-minus" data-btn="make-minus">m-</button>
-            <button class="calc__make-recall" data-btn="make-recall">mr</button>
-            <button class="calc__reset" data-btn="reset" id="reset-text">
+            <button class="calc__make-recall memory-lock" data-btn="make-recall" id="makeRecallBtn">mr</button>
+            <button class="calc__reset" data-btn="reset" id="resetText">
               AC
             </button>
             <button class="calc__sign-change" data-btn="sign-change">
