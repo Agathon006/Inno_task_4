@@ -20,8 +20,13 @@
   "homepage": "https://github.com/Agathon006/simple-calculator#readme",
   "devDependencies": {
     "eslint": "^9.13.0",
-    "webpack": "^5.95.0",
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3",
+    "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
-  }
+    "webpack-dev-server": "^5.1.0",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0"
+  },
+  "dependencies": {}
 }

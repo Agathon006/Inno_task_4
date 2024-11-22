@@ -1,5 +1,6 @@
-@import "../assets/fonts/Inter/font-inter-regular.css";
-@import "./template/template";
-@import "./parts/header";
-@import "./parts/main";
-@import "./parts/footer";
+@use "./template/reset" as *;
+@use "./template/template" as *;
+@use "./parts/header" as *;
+@use "./parts/main" as *;
+@use "./parts/footer" as *;
+@import url("../assets/fonts/Inter/font-inter-regular.css");
