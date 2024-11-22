@@ -1,0 +1,192 @@
+.main {
+  background-color: var(--background-color);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    flex-grow: 1;
+    padding: 20px 10px;
+
+    button {
+      font-family: "Inter";
+      font-size: 32px;
+      color: var(--text-color);
+      border: 1px solid black;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        filter: brightness(110%);
+      }
+
+      @media (max-width: 425px) {
+        font-size: 28px;
+      }
+    }
+
+    .calc {
+      max-width: 640px;
+      margin: 0 auto;
+      display: grid;
+      background-color: var(--primary-color);
+      border: 2px solid black;
+      border-radius: 10px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "last-value   last-value    last-value  last-value"
+        "value        value         value       value"
+        "reset        sign-change   percent     division"
+        "seven        eight         nine        mult"
+        "four         five          six         minus"
+        "one          two           three       plus"
+        "zero         zero          comma       compute";
+
+      &__last-value {
+        font-family: "Inter";
+        border-radius: 10px 10px 0 0;
+        padding: 3px 15px;
+        font-size: 28px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #838383;
+        align-self: center;
+        text-align: end;
+
+        grid-area: last-value;
+      }
+
+      &__value {
+        font-family: "Inter";
+        padding: 10px 15px;
+        font-size: 56px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: var(--text-color);
+        align-self: center;
+        text-align: end;
+
+        grid-area: value;
+      }
+
+      &__reset {
+        background-color: var(--secondary-color);
+        grid-area: reset;
+      }
+
+      &__sign-change {
+        background-color: var(--secondary-color);
+        grid-area: sign-change;
+      }
+
+      &__percent {
+        background-color: var(--secondary-color);
+        grid-area: percent;
+      }
+
+      &__division {
+        background-color: var(--special-color);
+        grid-area: division;
+      }
+
+      &__seven {
+        background-color: var(--tertiary-color);
+        grid-area: seven;
+      }
+
+      &__eight {
+        background-color: var(--tertiary-color);
+        grid-area: eight;
+      }
+
+      &__nine {
+        background-color: var(--tertiary-color);
+        grid-area: nine;
+      }
+
+      &__mult {
+        background-color: var(--special-color);
+        grid-area: mult;
+      }
+
+      &__four {
+        background-color: var(--tertiary-color);
+        grid-area: four;
+      }
+
+      &__five {
+        background-color: var(--tertiary-color);
+        grid-area: five;
+      }
+
+      &__six {
+        background-color: var(--tertiary-color);
+        grid-area: six;
+      }
+
+      &__minus {
+        background-color: var(--special-color);
+        grid-area: minus;
+      }
+
+      &__one {
+        background-color: var(--tertiary-color);
+        grid-area: one;
+      }
+
+      &__two {
+        background-color: var(--tertiary-color);
+        grid-area: two;
+      }
+
+      &__three {
+        background-color: var(--tertiary-color);
+        grid-area: three;
+      }
+
+      &__plus {
+        background-color: var(--special-color);
+        grid-area: plus;
+      }
+
+      &__zero {
+        background-color: var(--tertiary-color);
+        border-radius: 0 0 0 10px;
+        grid-area: zero;
+      }
+
+      &__comma {
+        background-color: var(--tertiary-color);
+        grid-area: comma;
+      }
+
+      &__compute {
+        background-color: var(--special-color);
+        border-radius: 0 0 10px 0;
+        grid-area: compute;
+      }
+    }
+
+    .note__wrapper {
+      display: flex;
+      justify-content: center;
+
+      .note {
+        font-family: "Inter";
+        padding-top: 10px;
+        font-size: 14px;
+        color: var(--text-color);
+
+        @media (max-width: 425px) {
+          font-size: 12px;
+        }
+
+        @media (max-width: 320px) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/icons/calc.ico" />
+    <link rel="stylesheet" href="./src/styles/template/reset.css" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <title>Simple calc app</title>
+    <script src="./build/bundle.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="wrapper dark-theme">
+      <header class="header">
+        <div class="header__wrapper">
+          <h2 class="header__headline">simple calc app</h2>
+          <button class="header__theme-button">
+            <img
+              src="./src/assets/images/theme.png"
+              alt="switch theme"
+              class="header__theme-button-icon"
+              id="theme-switch"
+            />
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__wrapper">
+          <div class="calc" id="calc">
+            <span class="calc__last-value" id="last-value"></span>
+            <output class="calc__value" id="value">0</output>
+            <button class="calc__reset" data-btn="reset" id="reset-text">
+              AC
+            </button>
+            <button class="calc__sign-change" data-btn="sign-change">
+              &plusmn
+            </button>
+            <button class="calc__percent" data-btn="percent">%</button>
+            <button class="calc__division" data-btn="division" id="divisionBtn">
+              &divide
+            </button>
+            <button class="calc__seven" data-btn="seven">7</button>
+            <button class="calc__eight" data-btn="eight">8</button>
+            <button class="calc__nine" data-btn="nine">9</button>
+            <button class="calc__mult" data-btn="mult" id="multBtn">
+              &times
+            </button>
+            <button class="calc__four" data-btn="four">4</button>
+            <button class="calc__five" data-btn="five">5</button>
+            <button class="calc__six" data-btn="six">6</button>
+            <button class="calc__minus" data-btn="minus" id="minusBtn">
+              -
+            </button>
+            <button class="calc__one" data-btn="one">1</button>
+            <button class="calc__two" data-btn="two">2</button>
+            <button class="calc__three" data-btn="three">3</button>
+            <button class="calc__plus" data-btn="plus" id="plusBtn">+</button>
+            <button class="calc__zero" data-btn="zero">0</button>
+            <button class="calc__comma" data-btn="comma">,</button>
+            <button class="calc__compute" data-btn="compute">=</button>
+          </div>
+          <div class="note__wrapper">
+            <span class="note"
+              >The calculator might not be accurate for very large numbers.</span
+            >
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <a href="https://innowise.com/" target="_blank">
+            <img src="./src/assets/images/innowise.svg" alt="Innowise" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

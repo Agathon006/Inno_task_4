@@ -1,0 +1,35 @@
+.wrapper {
+  width: 100%;
+  margin: 0px auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-theme {
+  --background-color: #6a636e;
+  --text-color: white;
+  --primary-color: #252127;
+  --secondary-color: #542869;
+  --tertiary-color: #413b44;
+  --special-color: #2bb19a;
+}
+
+.light-theme {
+  --background-color: #eeeeee;
+  --text-color: black;
+  --primary-color: #e6e4e7;
+  --secondary-color: #9949be;
+  --tertiary-color: #cacaca;
+  --special-color: #6ef1dc;
+}
+
+.active {
+  color: var(--special-color) !important;
+  background-color: var(--text-color) !important;
+}
+
+.lock {
+  filter: brightness(50%) !important;
+  pointer-events: none;
+}

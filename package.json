@@ -1,0 +1,27 @@
+{
+  "name": "advanced-calculator",
+  "version": "1.0.0",
+  "description": "Advanced calculator app that can perform such base operations as addition, subtraction, multiplication, division, percentage, sign change etc.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agathon006/simple-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agathon006/simple-calculator/issues"
+  },
+  "homepage": "https://github.com/Agathon006/simple-calculator#readme",
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
