@@ -115,6 +115,12 @@ export default () => {
       case "factorial":
         onFactorialClick(state);
         break;
+      case "sqrt":
+        state.value = state.value ** (1 / 2);
+        break;
+      case "cbrt":
+        state.value = state.value ** (1 / 3);
+        break;
       case "reciprocal":
         if (state.value === 0) {
           state.value = "Error";

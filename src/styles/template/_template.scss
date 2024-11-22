@@ -40,6 +40,7 @@
 }
 
 .supscript {
+  pointer-events: none;
   vertical-align: super;
   font-size: 75%;
   position: relative;
@@ -47,6 +48,7 @@
 }
 
 .subscript {
+  pointer-events: none;
   vertical-align: sub; 
   font-size: 75%;
   position: relative;
