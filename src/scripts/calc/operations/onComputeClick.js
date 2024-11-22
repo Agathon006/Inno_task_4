@@ -11,11 +11,10 @@ export default (state, lastValueText) => {
       } else {
         state.value = 0 + state.value;
       }
-      state.lastValue = `${
-        state.lastValue === null || typeof state.lastValue === "string"
-          ? 0
-          : state.lastValue
-      } + ${oldValue} = `;
+      state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
+        ? 0
+        : state.lastValue
+        } + ${oldValue} = `;
       break;
     case "minus":
       if (state.lastValue !== null && typeof state.lastValue === "number") {
@@ -23,11 +22,10 @@ export default (state, lastValueText) => {
       } else {
         state.value = 0 - state.value;
       }
-      state.lastValue = `${
-        state.lastValue === null || typeof state.lastValue === "string"
-          ? 0
-          : state.lastValue
-      } - ${oldValue} = `;
+      state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
+        ? 0
+        : state.lastValue
+        } - ${oldValue} = `;
       break;
     case "mult":
       if (state.lastValue !== null && typeof state.lastValue === "number") {
@@ -35,11 +33,10 @@ export default (state, lastValueText) => {
       } else {
         state.value = 0 * state.value;
       }
-      state.lastValue = `${
-        state.lastValue === null || typeof state.lastValue === "string"
-          ? 0
-          : state.lastValue
-      } * ${oldValue} = `;
+      state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
+        ? 0
+        : state.lastValue
+        } * ${oldValue} = `;
       break;
     case "division":
       if (state.value === 0) {
@@ -52,11 +49,21 @@ export default (state, lastValueText) => {
           state.value = 0 / state.value;
         }
       }
-      state.lastValue = `${
-        state.lastValue === null || typeof state.lastValue === "string"
-          ? 0
-          : state.lastValue
-      } / ${oldValue} = `;
+      state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
+        ? 0
+        : state.lastValue
+        } / ${oldValue} = `;
+      break;
+    case "power":
+      if (state.lastValue !== null && typeof state.lastValue === "number") {
+        state.value = state.lastValue ** state.value;
+      } else {
+        state.value = 0 ** state.value;
+      }
+      state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
+        ? 0
+        : state.lastValue
+        } ^ ${oldValue} = `;
       break;
     default:
       if (lastValueText.textContent !== "") {
@@ -66,27 +73,28 @@ export default (state, lastValueText) => {
         switch (lastValueText.textContent.split(" ")[1]) {
           case "+":
             state.value += repeatedValue;
-            state.lastValue = `${
-              state.value - repeatedValue
-            } + ${repeatedValue} = `;
+            state.lastValue = `${state.value - repeatedValue
+              } + ${repeatedValue} = `;
             break;
           case "-":
             state.value -= repeatedValue;
-            state.lastValue = `${
-              state.value + repeatedValue
-            } - ${repeatedValue} = `;
+            state.lastValue = `${state.value + repeatedValue
+              } - ${repeatedValue} = `;
             break;
           case "*":
             state.value *= repeatedValue;
-            state.lastValue = `${
-              repeatedValue === 0 ? repeatedValue : state.value / repeatedValue
-            } * ${repeatedValue} = `;
+            state.lastValue = `${repeatedValue === 0 ? repeatedValue : state.value / repeatedValue
+              } * ${repeatedValue} = `;
             break;
           case "/":
             state.value /= repeatedValue;
-            state.lastValue = `${
-              state.value * repeatedValue
-            } / ${repeatedValue} = `;
+            state.lastValue = `${state.value * repeatedValue
+              } / ${repeatedValue} = `;
+            break;
+          case "^":
+            state.value = state.value ** repeatedValue;
+            state.lastValue = `${repeatedValue === 0 ? state.value === 1 ? 1 : repeatedValue : state.value ** (1 / repeatedValue)
+              } ^ ${repeatedValue} = `;
             break;
         }
       }

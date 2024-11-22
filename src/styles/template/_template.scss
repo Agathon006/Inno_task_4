@@ -29,6 +29,11 @@
   background-color: var(--text-color) !important;
 }
 
+.secondary-active {
+  color: var(--secondary-color) !important;
+  background-color: var(--text-color) !important;
+}
+
 .lock {
   filter: brightness(50%) !important;
   pointer-events: none;

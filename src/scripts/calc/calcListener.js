@@ -23,12 +23,14 @@ export default () => {
   const minusBtn = document.querySelector("#minusBtn");
   const multBtn = document.querySelector("#multBtn");
   const divisionBtn = document.querySelector("#divisionBtn");
+  const powerBtn = document.querySelector("#powerBtn");
 
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active");
     multBtn.classList.remove("active");
     minusBtn.classList.remove("active");
     plusBtn.classList.remove("active");
+    powerBtn.classList.remove("secondary-active");
 
     switch (e.target.dataset.btn) {
       case "zero":
@@ -109,6 +111,12 @@ export default () => {
       case "cube":
         state.value = state.value ** 3;
         break;
+      case "power":
+        if (typeof state.lastValue === "number" && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
+        state.operation = "power";
+        break;
       case "ten-power":
         state.value = 10 ** state.value;
         break;
@@ -158,6 +166,9 @@ export default () => {
         break;
       case "division":
         divisionBtn.classList.add("active");
+        break;
+      case "power":
+        powerBtn.classList.add("secondary-active");
         break;
       default:
         break;
