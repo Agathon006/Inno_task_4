@@ -111,6 +111,14 @@ export default () => {
       case "ten-power":
         state.value = 10 ** state.value;
         break;
+      case "reciprocal":
+        if (state.value === 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          state.value = 1 / state.value;
+        }
+        break;
       default:
         break;
     }
