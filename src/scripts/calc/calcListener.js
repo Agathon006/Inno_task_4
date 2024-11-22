@@ -102,6 +102,12 @@ export default () => {
       case "compute":
         onComputeClick(state, lastValueText);
         break;
+      case "square":
+        state.value = state.value ** 2;
+        break;
+      case "cube":
+        state.value = state.value ** 3;
+        break;
       default:
         break;
     }
