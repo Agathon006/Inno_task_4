@@ -126,16 +126,31 @@ export default () => {
         onFactorialClick(state);
         break;
       case "sqrt":
-        state.value = state.value ** (1 / 2);
+        if (state.value < 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          state.value = state.value ** (1 / 2);
+        }
         break;
       case "cbrt":
-        state.value = state.value ** (1 / 3);
+        if (state.value < 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          state.value = state.value ** (1 / 3);
+        }
         break;
       case "root":
-        if (typeof state.lastValue === "number" && state.operation !== null) {
-          onComputeClick(state, lastValueText);
+        if (state.value < 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          if (typeof state.lastValue === "number" && state.operation !== null) {
+            onComputeClick(state, lastValueText);
+          }
+          state.operation = "root";
         }
-        state.operation = "root";
         break;
       case "reciprocal":
         if (state.value === 0) {
