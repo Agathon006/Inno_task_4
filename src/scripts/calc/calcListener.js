@@ -29,6 +29,19 @@ export default () => {
   const makeClearBtn = document.querySelector('#makeClearBtn')
   const makeRecallBtn = document.querySelector('#makeRecallBtn')
 
+  const digitsMap = {
+    zero: "0",
+    one: "1",
+    two: "2",
+    three: "3",
+    four: "4",
+    five: "5",
+    six: "6",
+    seven: "7",
+    eight: "8",
+    nine: "9",
+  };
+
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active");
     multBtn.classList.remove("active");
@@ -38,36 +51,6 @@ export default () => {
     rootBtn.classList.remove("secondary-active");
 
     switch (e.target.dataset.btn) {
-      case "zero":
-        onDigitClick(state, valueText, "0");
-        break;
-      case "one":
-        onDigitClick(state, valueText, "1");
-        break;
-      case "two":
-        onDigitClick(state, valueText, "2");
-        break;
-      case "three":
-        onDigitClick(state, valueText, "3");
-        break;
-      case "four":
-        onDigitClick(state, valueText, "4");
-        break;
-      case "five":
-        onDigitClick(state, valueText, "5");
-        break;
-      case "six":
-        onDigitClick(state, valueText, "6");
-        break;
-      case "seven":
-        onDigitClick(state, valueText, "7");
-        break;
-      case "eight":
-        onDigitClick(state, valueText, "8");
-        break;
-      case "nine":
-        onDigitClick(state, valueText, "9");
-        break;
       case "comma":
         onCommaClick(state, valueText);
         break;
@@ -163,19 +146,20 @@ export default () => {
           state.value = 1 / state.value;
         }
         break;
-      case "make-clear":
+      case "makeClear":
         state.memoryValue = null;
         break;
-      case "make-plus":
+      case "makePlus":
         state.memoryValue += state.value;
         break;
-      case "make-minus":
+      case "makeMinus":
         state.memoryValue -= state.value;
         break;
-      case "make-recall":
-        state.value = state.memoryValue;
+      case "makeRecall":
+        onDigitClick(state, valueText, state.memoryValue.toString());
         break;
       default:
+        if (e.target.dataset.btn in digitsMap) onDigitClick(state, valueText, digitsMap[e.target.dataset.btn]);
         break;
     }
 
