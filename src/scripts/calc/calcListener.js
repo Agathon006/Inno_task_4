@@ -3,6 +3,7 @@
 import onDigitClick from "./operations/onDigitClick.js";
 import onCommaClick from "./operations/onCommaClick.js";
 import onComputeClick from "./operations/onComputeClick.js";
+import onFactorialClick from "./operations/onFactorialClick.js";
 
 import formatNumToStr from "../utils/formatNumToStr.js";
 import switchLockCalc from "../utils/switchLockCalc.js";
@@ -110,6 +111,9 @@ export default () => {
         break;
       case "ten-power":
         state.value = 10 ** state.value;
+        break;
+      case "factorial":
+        onFactorialClick(state);
         break;
       case "reciprocal":
         if (state.value === 0) {
