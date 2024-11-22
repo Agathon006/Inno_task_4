@@ -24,6 +24,7 @@ export default () => {
   const multBtn = document.querySelector("#multBtn");
   const divisionBtn = document.querySelector("#divisionBtn");
   const powerBtn = document.querySelector("#powerBtn");
+  const rootBtn = document.querySelector("#rootBtn");
 
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active");
@@ -31,6 +32,7 @@ export default () => {
     minusBtn.classList.remove("active");
     plusBtn.classList.remove("active");
     powerBtn.classList.remove("secondary-active");
+    rootBtn.classList.remove("secondary-active");
 
     switch (e.target.dataset.btn) {
       case "zero":
@@ -129,6 +131,12 @@ export default () => {
       case "cbrt":
         state.value = state.value ** (1 / 3);
         break;
+      case "root":
+        if (typeof state.lastValue === "number" && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
+        state.operation = "root";
+        break;
       case "reciprocal":
         if (state.value === 0) {
           state.value = "Error";
@@ -169,6 +177,9 @@ export default () => {
         break;
       case "power":
         powerBtn.classList.add("secondary-active");
+        break;
+      case "root":
+        rootBtn.classList.add("secondary-active");
         break;
       default:
         break;
