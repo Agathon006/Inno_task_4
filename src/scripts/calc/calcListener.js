@@ -108,6 +108,9 @@ export default () => {
       case "cube":
         state.value = state.value ** 3;
         break;
+      case "ten-power":
+        state.value = 10 ** state.value;
+        break;
       default:
         break;
     }
