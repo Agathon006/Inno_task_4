@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,19 @@
   },
   "homepage": "https://github.com/Agathon006/simple-calculator#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "css-loader": "^7.1.2",
     "eslint": "^9.13.0",
+    "jest": "^29.7.0",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.2.5",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0",
-    "css-loader": "^7.1.2",
-    "style-loader": "^4.0.0"
+    "webpack-dev-server": "^5.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel": "^6.23.0"
+  }
 }

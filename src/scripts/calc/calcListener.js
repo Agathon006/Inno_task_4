@@ -67,10 +67,15 @@ export default () => {
         state.value = state.value / 100;
         break;
       case "division":
-        if (typeof state.lastValue === "number" && state.operation !== null) {
-          onComputeClick(state, lastValueText);
+        if (state.value === 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          if (typeof state.lastValue === "number" && state.operation !== null) {
+            onComputeClick(state, lastValueText);
+          }
+          state.operation = "division";
         }
-        state.operation = "division";
         break;
       case "mult":
         if (typeof state.lastValue === "number" && state.operation !== null) {
@@ -109,26 +114,26 @@ export default () => {
         state.value = 10 ** state.value;
         break;
       case "factorial":
-        onFactorialClick(state);
+        if (state.value < 0) {
+          state.value = "Error";
+          switchLockCalc();
+        } else {
+          onFactorialClick(state);
+        }
         break;
       case "sqrt":
         if (state.value < 0) {
           state.value = "Error";
           switchLockCalc();
         } else {
-          state.value = state.value ** (1 / 2);
+          state.value = Math.sqrt(state.value);
         }
         break;
       case "cbrt":
-        if (state.value < 0) {
-          state.value = "Error";
-          switchLockCalc();
-        } else {
-          state.value = state.value ** (1 / 3);
-        }
+        state.value = Math.cbrt(state.value);
         break;
       case "root":
-        if (state.value < 0) {
+        if (state.value <= 0 || (state.lastValue < 0 && (state.value % 2 === 0))) {
           state.value = "Error";
           switchLockCalc();
         } else {

@@ -1,6 +1,6 @@
 "use strict";
 
-import switchLockCalc from "../../utils/switchLockCalc.js";
+import sqrtN from "../../utils/sqrtN.js";
 
 export default (state, lastValueText) => {
   let oldValue = state.value;
@@ -41,13 +41,12 @@ export default (state, lastValueText) => {
     case "division":
       if (state.value === 0) {
         state.value = "Error";
-        switchLockCalc();
+        break;
+      }
+      if (state.lastValue !== null && typeof state.lastValue === "number") {
+        state.value = state.lastValue / state.value;
       } else {
-        if (state.lastValue !== null && typeof state.lastValue === "number") {
-          state.value = state.lastValue / state.value;
-        } else {
-          state.value = 0 / state.value;
-        }
+        state.value = 0 / state.value;
       }
       state.lastValue = `${state.lastValue === null || typeof state.lastValue === "string"
         ? 0
@@ -66,10 +65,14 @@ export default (state, lastValueText) => {
         } ^ ${oldValue} = `;
       break;
     case "root":
+      if (state.value <= 0 || (state.lastValue < 0 && (state.value % 2 === 0))) {
+        state.value = "Error";
+        break;
+      }
       if (state.lastValue !== null && typeof state.lastValue === "number") {
-        state.value = state.lastValue ** (1 / state.value);
+        state.value = sqrtN(state.lastValue, state.value);
       } else {
-        state.value = 0 ** (1 / state.value);
+        state.value = sqrtN(0, state.value)
       }
       state.lastValue = `sqrt(${state.lastValue === null || typeof state.lastValue === "string"
         ? 0
@@ -119,7 +122,7 @@ export default (state, lastValueText) => {
               } ^ ${repeatedValue} = `;
             break;
           case "sqrt":
-            state.value = state.value ** (1 / repeatedValue);
+            state.value = sqrtN(state.value, repeatedValue);
             state.lastValue = `sqrt(${state.value ** repeatedValue
               }, ${repeatedValue}) = `;
             break;

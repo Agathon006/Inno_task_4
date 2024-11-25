@@ -1,11 +1,8 @@
 "use strict";
 
-import switchLockCalc from "../../utils/switchLockCalc.js";
-
 export default (state) => {
-    if (state.value < 0) {
+    if (state.value < 0 || state.value === "Error") {
         state.value = "Error";
-        switchLockCalc();
     } else if (state.value === 0) {
         state.value = 1;
     } else {
