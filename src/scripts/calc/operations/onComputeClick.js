@@ -120,9 +120,9 @@ export default (state, lastValueText) => {
               } / ${repeatedValue} = `;
             break;
           case "^":
-            state.value = state.value ** repeatedValue;
-            state.lastValue = `${state.value < 0 ? '-' : ''}${repeatedValue === 0 ? state.value === 1 ? 1 : repeatedValue : Math.round(Math.abs(state.value) ** (1 / repeatedValue))
+            state.lastValue = `${state.value < 0 ? '-' : ''}${repeatedValue === 0 ? state.value === 1 ? 1 : repeatedValue : state.value
               } ^ ${repeatedValue} = `;
+            state.value = state.value ** repeatedValue;
             break;
           case "sqrt":
             state.value = sqrtN(state.value, repeatedValue);
