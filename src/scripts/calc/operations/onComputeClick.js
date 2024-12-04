@@ -120,7 +120,10 @@ export default (state, lastValueText) => {
               } / ${repeatedValue} = `;
             break;
           case "^":
-            state.lastValue = `${state.value < 0 ? '-' : ''}${repeatedValue === 0 ? state.value === 1 ? 1 : repeatedValue : state.value
+            state.lastValue = `${state.value < 0 ? '-' : ''}
+            ${repeatedValue === 0 ? 
+              state.value === 1 ? 1 : repeatedValue : 
+              state.value
               } ^ ${repeatedValue} = `;
             state.value = state.value ** repeatedValue;
             break;
