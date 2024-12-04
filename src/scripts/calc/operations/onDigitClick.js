@@ -33,7 +33,16 @@ export default (state, valueText, digit) => {
     if (state.value === 0) {
       state.value = +digit;
     } else {
-      state.value = +(state.value + digit);
+      if (digit === "0") {
+        valueText.textContent += "0";
+      } else {
+        if (valueText.textContent.length !== state.value.toString().length) {
+          const match = valueText.textContent.match(/0+$/);
+          state.value = +(state.value + match[0] + digit);
+        } else {
+          state.value = +(state.value + digit);
+        }
+      }
     }
   }
 };

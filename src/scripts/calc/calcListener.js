@@ -172,10 +172,7 @@ export default () => {
     }
 
     if (
-      e.target.dataset.btn !== "comma" &&
-      !(
-        e.target.dataset.btn === "zero" && /^[0,]*$/.test(valueText.textContent)
-      )
+      e.target.dataset.btn !== "comma" && e.target.dataset.btn !== "zero"
     ) {
       valueText.textContent = formatNumToStr(state.value);
     }
