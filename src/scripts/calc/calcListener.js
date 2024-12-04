@@ -5,6 +5,7 @@ import onCommaClick from "./operations/onCommaClick.js";
 import onComputeClick from "./operations/onComputeClick.js";
 import onFactorialClick from "./operations/onFactorialClick.js";
 
+import sqrtN from "../utils/sqrtN.js";
 import formatNumToStr from "../utils/formatNumToStr.js";
 import switchLockCalc from "../utils/switchLockCalc.js";
 
@@ -126,11 +127,11 @@ export default () => {
           state.value = "Error";
           switchLockCalc();
         } else {
-          state.value = Math.sqrt(state.value);
+          state.value = sqrtN(state.value, 2);
         }
         break;
       case "cbrt":
-        state.value = Math.cbrt(state.value);
+        state.value = sqrtN(state.value, 3);
         break;
       case "root":
         if (typeof state.lastValue === "number" && state.operation !== null) {

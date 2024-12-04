@@ -5,6 +5,5 @@ export default (x, n) => {
     if (x < 0 && n % 2 === 0) {
         throw new Error("Can't get even root of negative number!");
     }
-    const magnitude = Math.abs(x) ** (1 / n);
-    return Math.sign(x) * magnitude;
+    return +((x < 0 ? '-' : '') + (x < 0 ? -x : x) ** (1 / n));
 };
