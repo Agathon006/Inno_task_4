@@ -2,6 +2,8 @@
 
 import onComputeClick from "../scripts/calc/operations/onComputeClick";
 
+jest.mock('../scripts/utils/switchLockCalc');
+
 test('1 + 2 must be 3', () => {
     const state = {
         value: 2,

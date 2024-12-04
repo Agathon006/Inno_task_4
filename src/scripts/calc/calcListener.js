@@ -133,15 +133,10 @@ export default () => {
         state.value = Math.cbrt(state.value);
         break;
       case "root":
-        if (state.value <= 0 || (state.lastValue < 0 && (state.value % 2 === 0))) {
-          state.value = "Error";
-          switchLockCalc();
-        } else {
-          if (typeof state.lastValue === "number" && state.operation !== null) {
-            onComputeClick(state, lastValueText);
-          }
-          state.operation = "root";
+        if (typeof state.lastValue === "number" && state.operation !== null) {
+          onComputeClick(state, lastValueText);
         }
+        state.operation = "root";
         break;
       case "reciprocal":
         if (state.value === 0) {

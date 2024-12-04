@@ -1,6 +1,7 @@
 "use strict";
 
 import sqrtN from "../../utils/sqrtN.js";
+import switchLockCalc from "../../utils/switchLockCalc.js";
 
 export default (state, lastValueText) => {
   let oldValue = state.value;
@@ -41,6 +42,7 @@ export default (state, lastValueText) => {
     case "division":
       if (state.value === 0) {
         state.value = "Error";
+        switchLockCalc();
         break;
       }
       if (state.lastValue !== null && typeof state.lastValue === "number") {
@@ -67,6 +69,7 @@ export default (state, lastValueText) => {
     case "root":
       if (state.value <= 0 || (state.lastValue < 0 && (state.value % 2 === 0))) {
         state.value = "Error";
+        switchLockCalc();
         break;
       }
       if (state.lastValue !== null && typeof state.lastValue === "number") {
