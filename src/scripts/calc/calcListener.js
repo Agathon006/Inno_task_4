@@ -108,15 +108,10 @@ export default () => {
         state.value = state.value / 100;
         break;
       case CALC_BUTTONS.DIVISION:
-        if (state.value === 0) {
-          state.value = CALC_BUTTONS.ERROR;
-          switchLockCalc();
-        } else {
-          if (typeof state.lastValue === "number" && state.operation !== null) {
-            onComputeClick(state, lastValueText);
-          }
-          state.operation = CALC_BUTTONS.DIVISION;
+        if (typeof state.lastValue === "number" && state.operation !== null) {
+          onComputeClick(state, lastValueText);
         }
+        state.operation = CALC_BUTTONS.DIVISION;
         break;
       case CALC_BUTTONS.MULT:
         if (typeof state.lastValue === "number" && state.operation !== null) {
