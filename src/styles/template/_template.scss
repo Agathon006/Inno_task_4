@@ -24,12 +24,12 @@
   --special-color: #6ef1dc;
 }
 
-.active {
+.active-operation {
   color: var(--special-color) !important;
   background-color: var(--text-color) !important;
 }
 
-.secondary-active {
+.secondary-active-operation {
   color: var(--secondary-color) !important;
   background-color: var(--text-color) !important;
 }

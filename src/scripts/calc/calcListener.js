@@ -44,12 +44,12 @@ export default () => {
   };
 
   document.querySelector("#calc").addEventListener("click", (e) => {
-    divisionBtn.classList.remove("active");
-    multBtn.classList.remove("active");
-    minusBtn.classList.remove("active");
-    plusBtn.classList.remove("active");
-    powerBtn.classList.remove("secondary-active");
-    rootBtn.classList.remove("secondary-active");
+    divisionBtn.classList.remove("active-operation");
+    multBtn.classList.remove("active-operation");
+    minusBtn.classList.remove("active-operation");
+    plusBtn.classList.remove("active-operation");
+    powerBtn.classList.remove("secondary-active-operation");
+    rootBtn.classList.remove("secondary-active-operation");
 
     switch (e.target.dataset.btn) {
       case "comma":
@@ -184,22 +184,22 @@ export default () => {
 
     switch (state.operation) {
       case "plus":
-        plusBtn.classList.add("active");
+        plusBtn.classList.add("active-operation");
         break;
       case "minus":
-        minusBtn.classList.add("active");
+        minusBtn.classList.add("active-operation");
         break;
       case "mult":
-        multBtn.classList.add("active");
+        multBtn.classList.add("active-operation");
         break;
       case "division":
-        divisionBtn.classList.add("active");
+        divisionBtn.classList.add("active-operation");
         break;
       case "power":
-        powerBtn.classList.add("secondary-active");
+        powerBtn.classList.add("secondary-active-operation");
         break;
       case "root":
-        rootBtn.classList.add("secondary-active");
+        rootBtn.classList.add("secondary-active-operation");
         break;
       default:
         break;
