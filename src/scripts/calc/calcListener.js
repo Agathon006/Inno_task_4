@@ -10,6 +10,48 @@ import formatNumToStr from "../utils/formatNumToStr.js";
 import switchLockCalc from "../utils/switchLockCalc.js";
 
 export default () => {
+  const CALC_BUTTONS = {
+    COMMA: 'comma',
+    RESET: 'reset',
+    RESET_TEXT: {
+      AC: 'AC',
+      C: 'C',
+    },
+    SIGN_CHANGE: 'sign-change',
+    PERCENT: 'percent',
+    DIVISION: 'division',
+    MULT: 'mult',
+    MINUS: 'minus',
+    PLUS: 'plus',
+    COMPUTE: 'compute',
+    SQUARE: 'square',
+    CUBE: 'cube',
+    POWER: 'power',
+    TEN_POWER: 'ten-power',
+    FACTORIAL: 'factorial',
+    SQRT: 'sqrt',
+    CBRT: 'cbrt',
+    ROOT: 'root',
+    RECIPROCAL: 'reciprocal',
+    MAKE_CLEAR: 'makeClear',
+    MAKE_PLUS: 'makePlus',
+    MAKE_MINUS: 'makeMinus',
+    MAKE_RECALL: 'makeRecall',
+    DIGITS: {
+      zero: "0",
+      one: "1",
+      two: "2",
+      three: "3",
+      four: "4",
+      five: "5",
+      six: "6",
+      seven: "7",
+      eight: "8",
+      nine: "9",
+    },
+    ERROR: 'Error',
+  }
+
   const state = {
     value: 0,
     lastValue: null,
@@ -30,19 +72,6 @@ export default () => {
   const makeClearBtn = document.querySelector('#makeClearBtn')
   const makeRecallBtn = document.querySelector('#makeRecallBtn')
 
-  const digitsMap = {
-    zero: "0",
-    one: "1",
-    two: "2",
-    three: "3",
-    four: "4",
-    five: "5",
-    six: "6",
-    seven: "7",
-    eight: "8",
-    nine: "9",
-  };
-
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active-operation");
     multBtn.classList.remove("active-operation");
@@ -52,115 +81,115 @@ export default () => {
     rootBtn.classList.remove("secondary-active-operation");
 
     switch (e.target.dataset.btn) {
-      case "comma":
+      case CALC_BUTTONS.COMMA:
         onCommaClick(state, valueText);
         break;
-      case "reset":
+      case CALC_BUTTONS.RESET:
         state.value = 0;
         state.lastValue = null;
-        if (resetText.textContent === "AC") state.operation = null;
-        if (valueText.textContent === "Error") switchLockCalc();
+        if (resetText.textContent === CALC_BUTTONS.RESET_TEXT.AC) state.operation = null;
+        if (valueText.textContent === CALC_BUTTONS.ERROR) switchLockCalc();
         break;
-      case "sign-change":
+      case CALC_BUTTONS.SIGN_CHANGE:
         state.value = -state.value;
         break;
-      case "percent":
+      case CALC_BUTTONS.PERCENT:
         state.value = state.value / 100;
         break;
-      case "division":
+      case CALC_BUTTONS.DIVISION:
         if (state.value === 0) {
-          state.value = "Error";
+          state.value = CALC_BUTTONS.ERROR;
           switchLockCalc();
         } else {
           if (typeof state.lastValue === "number" && state.operation !== null) {
             onComputeClick(state, lastValueText);
           }
-          state.operation = "division";
+          state.operation = CALC_BUTTONS.DIVISION;
         }
         break;
-      case "mult":
+      case CALC_BUTTONS.MULT:
         if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
-        state.operation = "mult";
+        state.operation = CALC_BUTTONS.MULT;
         break;
-      case "minus":
+      case CALC_BUTTONS.MINUS:
         if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
-        state.operation = "minus";
+        state.operation = CALC_BUTTONS.MINUS;
         break;
-      case "plus":
+      case CALC_BUTTONS.PLUS:
         if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
-        state.operation = "plus";
+        state.operation = CALC_BUTTONS.PLUS;
         break;
-      case "compute":
+      case CALC_BUTTONS.COMPUTE:
         onComputeClick(state, lastValueText);
         break;
-      case "square":
+      case CALC_BUTTONS.SQUARE:
         state.value = state.value ** 2;
         break;
-      case "cube":
+      case CALC_BUTTONS.CUBE:
         state.value = state.value ** 3;
         break;
-      case "power":
+      case CALC_BUTTONS.POWER:
         if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
-        state.operation = "power";
+        state.operation = CALC_BUTTONS.POWER;
         break;
-      case "ten-power":
+      case CALC_BUTTONS.TEN_POWER:
         state.value = 10 ** state.value;
         break;
-      case "factorial":
+      case CALC_BUTTONS.FACTORIAL:
         if (state.value < 0) {
-          state.value = "Error";
+          state.value = CALC_BUTTONS.ERROR;
           switchLockCalc();
         } else {
           onFactorialClick(state);
         }
         break;
-      case "sqrt":
+      case CALC_BUTTONS.SQRT:
         if (state.value < 0) {
-          state.value = "Error";
+          state.value = CALC_BUTTONS.ERROR;
           switchLockCalc();
         } else {
           state.value = sqrtN(state.value, 2);
         }
         break;
-      case "cbrt":
+      case CALC_BUTTONS.CBRT:
         state.value = sqrtN(state.value, 3);
         break;
-      case "root":
+      case CALC_BUTTONS.ROOT:
         if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
-        state.operation = "root";
+        state.operation = CALC_BUTTONS.ROOT;
         break;
-      case "reciprocal":
+      case CALC_BUTTONS.RECIPROCAL:
         if (state.value === 0) {
-          state.value = "Error";
+          state.value = CALC_BUTTONS.ERROR;
           switchLockCalc();
         } else {
           state.value = 1 / state.value;
         }
         break;
-      case "makeClear":
+      case CALC_BUTTONS.MAKE_CLEAR:
         state.memoryValue = null;
         break;
-      case "makePlus":
+      case CALC_BUTTONS.MAKE_PLUS:
         state.memoryValue += state.value;
         break;
-      case "makeMinus":
+      case CALC_BUTTONS.MAKE_MINUS:
         state.memoryValue -= state.value;
         break;
-      case "makeRecall":
+      case CALC_BUTTONS.MAKE_RECALL:
         onDigitClick(state, valueText, state.memoryValue.toString());
         break;
       default:
-        if (e.target.dataset.btn in digitsMap) onDigitClick(state, valueText, digitsMap[e.target.dataset.btn]);
+        if (e.target.dataset.btn in CALC_BUTTONS.DIGITS) onDigitClick(state, valueText, CALC_BUTTONS.DIGITS[e.target.dataset.btn]);
         break;
     }
 
@@ -173,32 +202,32 @@ export default () => {
     }
 
     if (
-      e.target.dataset.btn !== "comma" && e.target.dataset.btn !== "zero"
+      e.target.dataset.btn !== CALC_BUTTONS.COMMA && e.target.dataset.btn !== "zero"
     ) {
       valueText.textContent = formatNumToStr(state.value);
     }
     lastValueText.textContent = formatNumToStr(state.lastValue);
     state.value
-      ? (resetText.textContent = "C")
-      : (resetText.textContent = "AC");
+      ? (resetText.textContent = CALC_BUTTONS.RESET_TEXT.C)
+      : (resetText.textContent = CALC_BUTTONS.RESET_TEXT.AC);
 
     switch (state.operation) {
-      case "plus":
+      case CALC_BUTTONS.PLUS:
         plusBtn.classList.add("active-operation");
         break;
-      case "minus":
+      case CALC_BUTTONS.MINUS:
         minusBtn.classList.add("active-operation");
         break;
-      case "mult":
+      case CALC_BUTTONS.MULT:
         multBtn.classList.add("active-operation");
         break;
-      case "division":
+      case CALC_BUTTONS.DIVISION:
         divisionBtn.classList.add("active-operation");
         break;
-      case "power":
+      case CALC_BUTTONS.POWER:
         powerBtn.classList.add("secondary-active-operation");
         break;
-      case "root":
+      case CALC_BUTTONS.ROOT:
         rootBtn.classList.add("secondary-active-operation");
         break;
       default:
