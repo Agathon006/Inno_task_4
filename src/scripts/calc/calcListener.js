@@ -74,11 +74,22 @@ export default () => {
 
   document.querySelector("#calc").addEventListener("click", (e) => {
     divisionBtn.classList.remove("active-operation");
+    divisionBtn.classList.add("calc__division");
+
     multBtn.classList.remove("active-operation");
+    multBtn.classList.add("calc__mult");
+
     minusBtn.classList.remove("active-operation");
+    minusBtn.classList.add("calc__minus");
+
     plusBtn.classList.remove("active-operation");
+    plusBtn.classList.add("calc__plus");
+
     powerBtn.classList.remove("secondary-active-operation");
+    powerBtn.classList.add("calc__power");
+
     rootBtn.classList.remove("secondary-active-operation");
+    rootBtn.classList.add("calc__root");
 
     switch (e.target.dataset.btn) {
       case CALC_BUTTONS.COMMA:
@@ -214,21 +225,27 @@ export default () => {
     switch (state.operation) {
       case CALC_BUTTONS.PLUS:
         plusBtn.classList.add("active-operation");
+        plusBtn.classList.remove("calc__plus");
         break;
       case CALC_BUTTONS.MINUS:
         minusBtn.classList.add("active-operation");
+        minusBtn.classList.remove("calc__minus");
         break;
       case CALC_BUTTONS.MULT:
         multBtn.classList.add("active-operation");
+        multBtn.classList.remove("calc__mult");
         break;
       case CALC_BUTTONS.DIVISION:
         divisionBtn.classList.add("active-operation");
+        divisionBtn.classList.remove("calc__division");
         break;
       case CALC_BUTTONS.POWER:
         powerBtn.classList.add("secondary-active-operation");
+        powerBtn.classList.remove("calc__power");
         break;
       case CALC_BUTTONS.ROOT:
         rootBtn.classList.add("secondary-active-operation");
+        rootBtn.classList.remove("calc__root");
         break;
       default:
         break;

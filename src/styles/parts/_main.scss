@@ -11,7 +11,6 @@
     button {
       font-family: "Inter";
       font-size: 32px;
-      color: var(--text-color);
       border: 1px solid black;
       cursor: pointer;
       transition: 0.2s;
@@ -89,6 +88,7 @@
       }
 
       &__open-braket {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: open-braket;
 
@@ -98,6 +98,7 @@
       }
 
       &__close-braket {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: close-braket;
 
@@ -107,6 +108,7 @@
       }
 
       &__make-clear {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: make-clear;
 
@@ -116,6 +118,7 @@
       }
 
       &__make-plus {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: make-plus;
 
@@ -125,6 +128,7 @@
       }
 
       &__make-minus {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: make-minus;
 
@@ -134,6 +138,7 @@
       }
 
       &__make-recall {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: make-recall;
 
@@ -143,26 +148,31 @@
       }
 
       &__reset {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: reset;
       }
 
       &__sign-change {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: sign-change;
       }
 
       &__percent {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: percent;
       }
 
       &__division {
+        color: var(--text-color);
         background-color: var(--special-color);
         grid-area: division;
       }
 
       &__second-function {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: second-function;
 
@@ -172,6 +182,7 @@
       }
 
       &__square {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: square;
 
@@ -181,6 +192,7 @@
       }
 
       &__cube {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: cube;
 
@@ -190,6 +202,7 @@
       }
 
       &__power {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: power;
 
@@ -199,6 +212,7 @@
       }
 
       &__exp {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: exp;
 
@@ -208,6 +222,7 @@
       }
 
       &__ten-power {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: ten-power;
 
@@ -217,26 +232,31 @@
       }
 
       &__seven {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: seven;
       }
 
       &__eight {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: eight;
       }
 
       &__nine {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: nine;
       }
 
       &__mult {
+        color: var(--text-color);
         background-color: var(--special-color);
         grid-area: mult;
       }
 
       &__reciprocal {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: reciprocal;
 
@@ -246,6 +266,7 @@
       }
 
       &__sqrt {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: sqrt;
 
@@ -255,6 +276,7 @@
       }
 
       &__cbrt {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: cbrt;
 
@@ -264,6 +286,7 @@
       }
 
       &__root {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: root;
 
@@ -273,6 +296,7 @@
       }
 
       &__ln {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: ln;
 
@@ -282,6 +306,7 @@
       }
 
       &__log10 {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: log10;
 
@@ -291,26 +316,31 @@
       }
 
       &__four {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: four;
       }
 
       &__five {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: five;
       }
 
       &__six {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: six;
       }
 
       &__minus {
+        color: var(--text-color);
         background-color: var(--special-color);
         grid-area: minus;
       }
 
       &__factorial {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: factorial;
 
@@ -320,6 +350,7 @@
       }
 
       &__sin {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: sin;
 
@@ -329,6 +360,7 @@
       }
 
       &__cos {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: cos;
 
@@ -338,6 +370,7 @@
       }
 
       &__tan {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: tan;
 
@@ -347,6 +380,7 @@
       }
 
       &__euler {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: euler;
 
@@ -356,6 +390,7 @@
       }
 
       &__ee {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: ee;
 
@@ -365,26 +400,31 @@
       }
 
       &__one {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: one;
       }
 
       &__two {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: two;
       }
 
       &__three {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: three;
       }
 
       &__plus {
+        color: var(--text-color);
         background-color: var(--special-color);
         grid-area: plus;
       }
 
       &__radians-mode {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: radians-mode;
         border-radius: 0 0 0 10px;
@@ -395,6 +435,7 @@
       }
 
       &__sinh {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: sinh;
 
@@ -404,6 +445,7 @@
       }
 
       &__cosh {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: cosh;
 
@@ -413,6 +455,7 @@
       }
 
       &__tanh {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: tanh;
 
@@ -422,6 +465,7 @@
       }
 
       &__pi {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: pi;
 
@@ -431,6 +475,7 @@
       }
 
       &__random {
+        color: var(--text-color);
         background-color: var(--secondary-color);
         grid-area: random;
 
@@ -440,6 +485,7 @@
       }
 
       &__zero {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: zero;
 
@@ -449,11 +495,13 @@
       }
 
       &__comma {
+        color: var(--text-color);
         background-color: var(--tertiary-color);
         grid-area: comma;
       }
 
       &__compute {
+        color: var(--text-color);
         background-color: var(--special-color);
         border-radius: 0 0 10px 0;
         grid-area: compute;
